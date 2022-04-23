@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("ispang/react-app")
+        app = docker.build("ispang13/react-app")
     }
 
     stage('Test image') {
