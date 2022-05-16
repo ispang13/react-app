@@ -12,7 +12,7 @@ extended: true
 app.get('/', function (req, res) {
 return res.send({ error: true, message: 'hello' })
 });
-// connection configurations
+// connection configurations helle
 var dbConn = mysql.createConnection({
 host: 'localhost',
 user: 'root',
