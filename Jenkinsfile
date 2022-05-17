@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'cd .\frontend\'
-                sh 'npm install' 
+                dir('frontend'){
+                    sh 'npm install' 
+                    echo "success"
+                }               
             }
         }
     }
