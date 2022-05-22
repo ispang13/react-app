@@ -1,13 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-svc
+  name: my-react
+  labels:
+    run: my-react
 spec:
-  selector:
-    role: app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-      nodePort: 32000
-  type: NodePort
+  type: NodePort
+  selector:
+    app: my-react
+  ports:
+    - protocol: TCP
+      port: 80 
+      targetPort: 3000
+    
+
