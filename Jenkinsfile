@@ -55,7 +55,7 @@ pipeline {
             withKubeCredentials(kubectlCredentials: [[caCertificate: '', 
             clusterName: 'kubernetes', contextName: '', credentialsId: 'testKube', namespace: 'kube-system', 
             serverUrl: 'https://10.0.0.4:6443']]){               
-                steps{
+                script{
                     kubectl apply -f services.yaml
                     kubectl apply -f deployment.yaml  
                 }
