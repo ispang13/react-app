@@ -21,7 +21,7 @@
 pipeline {
     environment {
     registry = "ispang13/react-app"
-    registryCredential = 'ispang13'
+    registryCredential = 'dockerhub_id'
     dockerImage = ''
 }
     agent any
