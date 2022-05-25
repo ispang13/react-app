@@ -50,9 +50,14 @@ pipeline {
     }
 }
 
-    stage('Cleaning up') {
-        steps{
-            sh "docker rmi $registry:$BUILD_NUMBER"
+    stage('connect-k8s') {
+        steps {
+            withKubeCredentials(kubectlCredentials: [[caCertificate: '', 
+            clusterName: 'kubernetes', contextName: '', credentialsId: 'testKube', namespace: 'kube-system', 
+            serverUrl: 'https://10.0.0.4:6443']]){               
+            kubectl apply -f services.yaml
+            kubectl apply -f deployment.yaml          
+            }
             }
         }
     }
