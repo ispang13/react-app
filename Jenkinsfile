@@ -54,13 +54,10 @@ pipeline {
         kubernetes {
       	    cloud 'kubernetes'
       	    defaultContainer 'jnlp'
+            yaml 'services.yaml'
             }
         }
-        steps {
-            script {
-                kubectl apply -f services.yaml
-            }
-      }
+
     }
 }
 }
