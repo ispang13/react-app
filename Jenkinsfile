@@ -58,7 +58,7 @@ pipeline {
         }
         steps {
             script {
-                kubernetesDeploy(configs: "hellodocker.yml", kubeconfigId: "MINIKUBECONFIG")
+                kubectl apply -f services.yaml
             }
       }
     }
