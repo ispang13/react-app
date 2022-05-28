@@ -50,6 +50,7 @@ pipeline {
     }
 }
 stage('List pods') {
+    steps{
     withKubeConfig([credentialsId: 'testkube',
                     caCertificate: '',
                     serverUrl: 'https://10.0.0.12:6443',
@@ -60,5 +61,6 @@ stage('List pods') {
       sh 'kubectl get pods'
     }
   }
+}
 }
 }
