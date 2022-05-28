@@ -49,15 +49,16 @@ pipeline {
         }
     }
 }
-    stage('connect-k8s') {
-        agent {
-        kubernetes {
-      	    cloud 'kubernetes'
-      	    defaultContainer 'jnlp'
-            yaml 'services.yaml'
-            }
-        }
-
+stage('List pods') {
+    withKubeConfig([credentialsId: 'testkube',
+                    caCertificate: '',
+                    serverUrl: 'https://10.0.0.12:6443',
+                    contextName: '',
+                    clusterName: 'kubernetes',
+                    namespace: 'kube-system'
+                    ]) {
+      sh 'kubectl get pods'
     }
+  }
 }
 }
