@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi-mysql
+  namespace: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restapi-mysql
+  template:
+    metadata:
+      labels:
+        app: restapi-mysql
+    spec:
+      containers:
+      - name: restapi-mysql
+        image: ispang13/test-api:latest

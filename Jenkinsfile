@@ -49,7 +49,7 @@ pipeline {
         }
     }
 }
-stage('List pods') {
+stage('Deployment') {
     steps{
     withKubeConfig([credentialsId: 'testKube',
                     caCertificate: '',
@@ -62,6 +62,8 @@ stage('List pods') {
         sh 'chmod u+x ./kubectl'  
         sh './kubectl apply -f services.yaml'
         sh './kubectl apply -f deployment.yaml'
+        sh './kubectl apply -f api-services.yaml'
+        sh './kubectl apply -f api-deployment.yaml'
     }
   }
 }
