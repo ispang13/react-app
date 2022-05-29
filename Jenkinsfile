@@ -58,9 +58,8 @@ stage('List pods') {
                     clusterName: 'kubernetes',
                     namespace: 'kube-system'
                     ]) {
-      script{
-          kubectl get pods
-        } 
+        sh 'echo helloworld'              
+        sh 'kubectl config view'
     }
   }
 }
