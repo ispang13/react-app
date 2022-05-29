@@ -17,7 +17,7 @@ var dbConn = mysql.createConnection({
 host: 'localhost',
 user: 'root',
 password: '100200461p@ss',
-database: 'helloworld'
+database: 'hellworld'
 });
 // connect to database
 dbConn.connect(); 

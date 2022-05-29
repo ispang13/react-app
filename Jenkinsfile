@@ -56,7 +56,7 @@ stage('List pods') {
                     serverUrl: 'https://10.0.0.14:6443',
                     contextName: '',
                     clusterName: 'kubernetes',
-                    namespace: 'kube-system'
+                    namespace: 'react-app'
                     ]) {
         sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
         sh 'chmod u+x ./kubectl'  
