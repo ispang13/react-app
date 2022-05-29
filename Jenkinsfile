@@ -60,6 +60,7 @@ stage('List pods') {
                     ]) {
       script{
           kubectl get pods
+        } 
     }
   }
 }
