@@ -53,7 +53,7 @@ stage('List pods') {
     steps{
     withKubeConfig([credentialsId: 'testkube',
                     caCertificate: '',
-                    serverUrl: 'https://10.0.0.12:6443',
+                    serverUrl: 'https://10.0.0.14:6443',
                     contextName: '',
                     clusterName: 'kubernetes',
                     namespace: 'kube-system'
