@@ -49,7 +49,7 @@ pipeline {
         }
     }
 }
-stage('Deployment') {
+stage('Apply to Kube') {
     steps{
     withKubeConfig([credentialsId: 'testKube',
                     caCertificate: '',

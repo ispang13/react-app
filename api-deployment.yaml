@@ -14,5 +14,5 @@ spec:
         app: restapi-mysql
     spec:
       containers:
-      - name: restapi-mysql
+      - name: test-api
         image: ispang13/test-api:latest
