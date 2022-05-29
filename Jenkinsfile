@@ -20,7 +20,8 @@
 
 pipeline {
     environment {
-    registry = "ispang13/react-app"
+    registry_1 = "ispang13/react-app"
+    registry_2 = "ispang13/test-api"
     registryCredential = 'dockerhub_id'
     dockerImage = ''
 }
@@ -31,16 +32,38 @@ pipeline {
             git 'https://github.com/ispang13/react-app.git'
             }
         }
-    stage('Building our image') {
+    stage('Building frontend image') {
         steps{
             dir('frontend'){
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry_1 + ":$BUILD_NUMBER"
             }
         }
     }
 }
-    stage('Deploy our image') {
+
+
+    stage('Deploy frontend image') {
+        steps{
+            script {
+                docker.withRegistry( '', registryCredential ) {
+                dockerImage.push()
+            }
+        }
+    }
+}
+    stage('Building api image') {
+        steps{
+            dir('backend'){
+                script {
+                    dockerImage = docker.build registry_2 + ":latest"
+            }
+        }
+    }
+}
+
+
+    stage('Deploy api image') {
         steps{
             script {
                 docker.withRegistry( '', registryCredential ) {
