@@ -20,7 +20,7 @@ const PersonList = () => {
            <table className="table is-striped is-fullwidth">
                 <thead>
                     <tr>
-                        <th>Number</th>
+                        <th>Numer</th>
                         <th>Name</th>
                         <th>Address</th>
                     </tr>

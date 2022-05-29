@@ -36,12 +36,11 @@ pipeline {
         steps{
             dir('frontend'){
                 script {
-                    dockerImage = docker.build registry_1 + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry_1 + ":latest"
             }
         }
     }
 }
-
 
     stage('Deploy frontend image') {
         steps{
@@ -61,8 +60,6 @@ pipeline {
         }
     }
 }
-
-
     stage('Deploy api image') {
         steps{
             script {
