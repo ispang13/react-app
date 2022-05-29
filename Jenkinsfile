@@ -51,7 +51,7 @@ pipeline {
 }
 stage('List pods') {
     steps{
-    withKubeConfig([credentialsId: 'testkube',
+    withKubeConfig([credentialsId: 'testKube',
                     caCertificate: '',
                     serverUrl: 'https://10.0.0.14:6443',
                     contextName: '',
