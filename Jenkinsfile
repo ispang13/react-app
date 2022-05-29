@@ -58,7 +58,8 @@ stage('List pods') {
                     clusterName: 'kubernetes',
                     namespace: 'kube-system'
                     ]) {
-      sh 'kubectl get pods'
+      script{
+          kubectl get pods
     }
   }
 }
