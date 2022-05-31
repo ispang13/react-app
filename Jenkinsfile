@@ -82,8 +82,8 @@ stage('Apply to Kube') {
         sh 'chmod u+x ./kubectl'  
         sh './kubectl apply -f services.yaml'
         sh './kubectl apply -f deployment.yaml'
-        //sh './kubectl apply -f api-services.yaml'
-        //sh './kubectl apply -f api-deployment.yaml'
+        sh './kubectl apply -f api-services.yaml'
+        sh './kubectl apply -f api-deployment.yaml'
     }
   }
 }
