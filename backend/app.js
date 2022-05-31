@@ -14,7 +14,7 @@ return res.send({ error: true, message: 'hello' })
 });
 // connection configurations helle
 var dbConn = mysql.createConnection({
-host: 'mysql.react-app',
+host: 'http://mysql.react-app',
 user: 'root',
 password: '100200461p@ss',
 database: 'helloworld'
