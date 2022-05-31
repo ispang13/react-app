@@ -10,7 +10,7 @@ const PersonList = () => {
     }, []);
  
     const getPersons = async () => {
-        const response =  await axios.get('http://restapi-mysql:4000/persons');
+        const response =  await axios.get('http://10.104.91.139:4000/persons');
         setPerson(response.data.data);
         
     }
