@@ -36,7 +36,7 @@ pipeline {
         steps{
             dir('frontend'){
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry_1 + ":$BUILD_NUMBER"
             }
         }
     }
@@ -55,7 +55,7 @@ pipeline {
         steps{
             dir('backend'){
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry_2 + ":$BUILD_NUMBER"
             }
         }
     }
