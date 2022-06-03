@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: test-api
-        image: ispang13/test-api:49
+        image: ispang13/test-api:50
