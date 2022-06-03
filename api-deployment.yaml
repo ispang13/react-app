@@ -13,7 +13,6 @@ spec:
     spec:
       containers:
       - name: test-api
-        image: ispang13/test-api:56
-
-      ports:
-       - containerPort: 4000
+        image: ispang13/test-api:57
+        ports:
+        - containerPort: 4000
