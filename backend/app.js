@@ -14,7 +14,7 @@ return res.send({ error: true, message: 'hello' })
 });
 // connection configurations helle
 var dbConn = mysql.createConnection({
-host: '192.168.188.156',
+host: '10.100.87.241',
 user: 'root',
 password: '100200461p@ss',
 database: 'helloworld'
