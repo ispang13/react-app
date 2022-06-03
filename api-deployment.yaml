@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: restapi-mysql
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: restapi-mysql
@@ -14,7 +13,7 @@ spec:
     spec:
       containers:
       - name: test-api
-        image: ispang13/test-api:55
+        image: ispang13/test-api:56
+
       ports:
-      - containerPort: 4000
-        name: test-api
+       - containerPort: 4000
