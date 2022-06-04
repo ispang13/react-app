@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: test-api
-    image: ispang13/test-api:latest
+    image: ispang13/test-api:61
     ports:
       - containerPort: 4000
         name: api-svc
