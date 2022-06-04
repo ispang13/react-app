@@ -3,15 +3,15 @@ kind: Service
 metadata:
   name: my-restapi
   labels:
-    run: my-restapi
+    backend: my-restapi
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 8080
     targetPort: 4000
     protocol: TCP
   selector:
-    run: my-restapi
+    backend: my-restapi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -20,15 +20,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: my-restapi
+      backend: my-restapi
   replicas: 1
   template:
     metadata:
       labels:
-        run: my-restapi
+        backend: my-restapi
     spec:
       containers:
       - name: testapi
-        image: ispang13/test-api:79
+        image: ispang13/test-api:80
         ports:
         - containerPort: 4000
