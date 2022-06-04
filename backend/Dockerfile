@@ -15,8 +15,8 @@ RUN npm install
  
 # add app  
 COPY . .
-
-EXPOSE 4000
 # will start app  
-CMD ["node", "app.js"] 
+CMD ["node", "app.js"]
+ 
+EXPOSE 4000
 
