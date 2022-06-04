@@ -10,9 +10,8 @@ const PersonList = () => {
     }, []);
  
     const getPersons = async () => {
-        const response =  await axios.get('http://10.101.64.8:4000');
+        const response =  await axios.get('http://10.101.64.8:4000/persons');
         setPerson(response.data.data);
-        
     }
  
     return (

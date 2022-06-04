@@ -8,7 +8,10 @@ spec:
 
   containers:
   - name: test-api
-    image: ispang13/test-api:67
+    image: ispang13/test-api:68
+    ports:
+      - containerPort: 4000
+        name: http-web-svc
        
 ---
 apiVersion: v1
@@ -21,6 +24,6 @@ spec:
   ports:
   - name: api-service-port
     protocol: TCP
-    port: 4000
-    targetPort: 4000
+    port: 80
+    targetPort: http-web-svc
   
