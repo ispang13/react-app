@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: test-api
-    image: ispang13/test-api:72
+    image: ispang13/test-api:73
     ports:
       - containerPort: 4000
        
