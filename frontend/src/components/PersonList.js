@@ -10,7 +10,7 @@ const PersonList = () => {
     }, []);
  
     const getPersons = async () => {
-        const response =  await axios.get('http://10.111.184.33:8080/persons');
+        const response =  await axios.get('http://10.109.219.32:8080/persons');
         setPerson(response.data.data);
     }
  
