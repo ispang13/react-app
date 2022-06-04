@@ -1,18 +1,27 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
+metadata:
+  name: restapi-mysql
+  labels:
+    app.kubernetes.io/name: proxy
+spec:
+  containers:
+  - name: test-api
+    image: ispang13/test-api:58
+    ports:
+      - containerPort: 4000
+        name: api-svc
+        
+---
+apiVersion: v1
+kind: Service
 metadata:
   name: restapi-mysql
 spec:
   selector:
-    matchLabels:
-      app: restapi-mysql
-  template:
-    metadata:
-      labels:
-        app: restapi-mysql
-    spec:
-      containers:
-      - name: test-api
-        image: ispang13/test-api:57
-        ports:
-        - containerPort: 4000
+    app.kubernetes.io/name: proxy
+  ports:
+  - name: api-service-port
+    protocol: TCP
+    port: 4000
+    targetPort: api-svc
