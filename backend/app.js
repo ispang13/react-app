@@ -78,7 +78,7 @@ return res.send({ error: false, data: results, message: 'User has been updated s
 
 */
 // set port
-app.listen(4000, function () {
+app.listen(4000, '0.0.0.0', function () {
 console.log('Node app is running on port 4000');
 });
 module.exports = app;
