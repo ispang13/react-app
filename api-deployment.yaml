@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: restapi-mysql
+  labels:
+    app:  restapi-mysql
 spec:
-  selector:
-    matchLabels:
-      app:  restapi-mysql 
+
   containers:
   - name: test-api
-    image: ispang13/test-api:64
+    image: ispang13/test-api:65
        
 ---
 apiVersion: v1
