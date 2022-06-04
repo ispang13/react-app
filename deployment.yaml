@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: my-react
-        image: ispang13/react-app:62
+        image: ispang13/react-app:63
