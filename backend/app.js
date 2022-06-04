@@ -24,8 +24,8 @@ dbConn.connect();
 // Retrieve all users 
 app.get('/persons', function (req, res) {
 dbConn.query('SELECT * FROM Persons', function (error, results) {
-if (error) throw error;
 console.log(results);
+if (error) throw error;
 return res.send({ error: false, data: results, message: 'users list.' });
 });
 });
