@@ -3,15 +3,13 @@ kind: Pod
 metadata:
   name: restapi-mysql
   labels:
-    app:  restapi-mysql
+    app.kubernetes.io/name: proxy
 spec:
-
   containers:
   - name: test-api
-    image: ispang13/test-api:68
+    image: ispang13/test-api:69
     ports:
       - containerPort: 4000
-        name: http-web-svc
        
 ---
 apiVersion: v1
@@ -20,10 +18,10 @@ metadata:
   name: restapi-mysql
 spec:
   selector:
-    app: restapi-mysql
+    app.kubernetes.io/name: proxy
   ports:
   - name: api-service-port
     protocol: TCP
     port: 80
-    targetPort: http-web-svc
+    targetPort: 4000
   
