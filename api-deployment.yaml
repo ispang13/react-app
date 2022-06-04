@@ -8,7 +8,7 @@ spec:
 
   containers:
   - name: test-api
-    image: ispang13/test-api:66
+    image: ispang13/test-api:67
        
 ---
 apiVersion: v1
