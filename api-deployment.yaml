@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
       - name: testapi
-        image: ispang13/test-api:85
+        image: ispang13/test-api:86
         ports:
         - containerPort: 4000
