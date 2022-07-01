@@ -71,6 +71,9 @@ pipeline {
 }
 stage('Apply to Kube') {
     steps{
+    when {
+                branch 'master'
+        }
     withKubeConfig([credentialsId: 'testKube',
                     caCertificate: '',
                     serverUrl: 'https://10.0.0.14:6443',
