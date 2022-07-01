@@ -70,6 +70,9 @@ pipeline {
     }
 }
 stage('Apply to Kube') {
+    when{
+        branch 'master'
+    }
     steps{
     withKubeConfig([credentialsId: 'testKube',
                     caCertificate: '',
