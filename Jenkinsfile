@@ -69,6 +69,19 @@ pipeline {
         }
     }
 }
+
+stage('Apply to Kube with ansible') {
+    when{
+        branch 'test-an'
+    }
+        steps{
+            script {
+                docker.withRegistry( '', registryCredential ) {
+                dockerImage.push()
+            }
+        }
+    }
+}
 stage('Apply to Kube') {
     when{
         branch 'master'
