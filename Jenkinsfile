@@ -75,12 +75,7 @@ stage('Apply to Kube with ansible') {
         branch 'test-branch'
     }
     steps {
-    sh "whoami"
-    ansiblePlaybook(
-            playbook: '/etc/ansible/playbooks/the-playbook.yml',
-            inventory: '/etc/ansible/hosts',
-            hostKeyChecking: false,
-        )
+    sh "ansible-playbook /etc/ansible/playbooks/the-playbook.yml -f 10"
 }
     }
 stage('Apply to Kube') {
