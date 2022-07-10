@@ -80,7 +80,6 @@ stage('Apply to Kube with ansible') {
             }
         }
     }
-}
 stage('Apply to Kube') {
     when{
         branch 'master'
