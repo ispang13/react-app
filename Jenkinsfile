@@ -75,10 +75,10 @@ stage('Apply to Kube with ansible') {
         branch 'test-branch'
     }
     steps {
-    ansiblePlaybook('/etc/ansible/playbooks/the-playbook.yml') {
-        inventoryPath('/etc/ansible/hosts')
-        becomeUser("an-admin")
-    }
+    ansiblePlaybook(
+            playbook: '/etc/ansible/playbooks/the-playbook.yml',
+            inventory: '/etc/ansible/hosts',
+        )
 }
     }
 stage('Apply to Kube') {
