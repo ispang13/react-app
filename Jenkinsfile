@@ -80,7 +80,6 @@ stage('Apply to Kube with ansible') {
             playbook: '/etc/ansible/playbooks/the-playbook.yml',
             inventory: '/etc/ansible/hosts',
             hostKeyChecking: false,
-            becomeUser: "an-admin"
         )
 }
     }
