@@ -76,7 +76,7 @@ stage('Apply to Kube with ansible') {
     }
     ansiblePlaybook(
         inventory:'/etc/ansible/hosts',
-        installation: 'ansible',
+        installation: 'Ansible',
         limit: '',
         playbook: '/etc/ansible/playbooks/the-playbook.yml',
         extras: ""
