@@ -81,6 +81,11 @@ stage('Apply to Kube with ansible') {
         playbook: '/etc/ansible/playbooks/the-playbook.yml',
         extras: ""
     )
+    steps{
+        script{
+            sh "ansible-playbook  /etc/ansible/playbooks/the-playbook.yml"
+        }
+    }
     }
 stage('Apply to Kube') {
     when{
