@@ -69,6 +69,18 @@ pipeline {
         }
     }
 }
+
+stage('Apply to Kube with ansible') {
+    when{
+        branch 'test-branch'
+    }
+        steps{
+            script {
+                sh "ansible-playbook  /etc/ansible/playbooks/the-playbook.yml"
+            }
+        }
+    }
+}
 stage('Apply to Kube') {
     when{
         branch 'master'
