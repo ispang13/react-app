@@ -74,18 +74,12 @@ stage('Apply to Kube with ansible') {
     when{
         branch 'test-branch'
     }
-    ansiblePlaybook(
-        inventory:'/etc/ansible/hosts',
-        installation: 'Ansible',
-        limit: '',
-        playbook: '/etc/ansible/playbooks/the-playbook.yml',
-        extras: ""
-    )
-    steps{
-        script{
-            sh "ansible-playbook  /etc/ansible/playbooks/the-playbook.yml"
-        }
+    steps {
+    ansiblePlaybook('/etc/ansible/playbooks/the-playbook.yml') {
+        inventoryPath('/etc/ansible/hosts')
+        becomeUser("an-admin")
     }
+}
     }
 stage('Apply to Kube') {
     when{
