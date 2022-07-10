@@ -75,6 +75,7 @@ stage('Apply to Kube with ansible') {
         branch 'test-branch'
     }
     steps {
+    sh "whoami"
     sh "ansible-playbook /etc/ansible/playbooks/the-playbook.yml -f 10"
 }
     }
