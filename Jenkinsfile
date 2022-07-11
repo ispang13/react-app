@@ -76,8 +76,7 @@ stage('Apply to Kube with ansible') {
     }
     steps {
         ansiblePlaybook(
-        disableHostKeyChecking: true,
-        credentialsId: 'private-key',
+        credentialsId: 'an-admin',
         playbook: '/etc/ansible/playbooks/the-playbook.yml',
         inventory: '/etc/ansible/hosts')
     }
