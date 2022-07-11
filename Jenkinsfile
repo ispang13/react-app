@@ -75,10 +75,11 @@ stage('Apply to Kube with ansible') {
         branch 'test-an'
     }
     steps {
-        ansiblePlaybook(
-        credentialsId: 'an-admin',
-        playbook: '/etc/ansible/playbooks/the-playbook.yml',
-        inventory: '/etc/ansible/hosts')
+        //ansiblePlaybook(
+        //credentialsId: 'an-admin',
+        //playbook: '/etc/ansible/playbooks/the-playbook.yml',
+        //inventory: '/etc/ansible/hosts')
+        sh "ansible-playbook the-playbook.yml -f --verbose"
     }
 }
 stage('Apply to Kube') {
