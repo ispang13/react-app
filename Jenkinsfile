@@ -79,7 +79,7 @@ stage('Apply to Kube with ansible') {
         //credentialsId: 'an-admin',
         //playbook: '/etc/ansible/playbooks/the-playbook.yml',
         //inventory: '/etc/ansible/hosts')
-        sh "ansible-playbook the-playbook.yml -f --verbose"
+        sh "ansible-playbook the-playbook.yml -f 10 --verbose"
     }
 }
 stage('Apply to Kube') {
