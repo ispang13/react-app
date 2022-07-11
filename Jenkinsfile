@@ -74,12 +74,9 @@ stage('Apply to Kube with ansible') {
     when{
         branch 'test-an'
     }
-        steps{
-            script {
-                docker.withRegistry( '', registryCredential ) {
-                dockerImage.push()
-            }
-        }
+    steps {
+        sh "whoami"
+        sh "ansible-playbook /etc/ansible/playbooks/the-playbook.yml -f 10"
     }
 }
 stage('Apply to Kube') {
