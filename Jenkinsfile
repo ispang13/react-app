@@ -75,8 +75,11 @@ stage('Apply to Kube with ansible') {
         branch 'test-an'
     }
     steps {
-        sh "whoami"
-        sh "ansible-playbook /etc/ansible/playbooks/the-playbook.yml -f 10"
+        ansiblePlaybook(
+        disableHostKeyChecking: true,
+        credentialsId: 'private-key',
+        playbook: '/etc/ansible/playbooks/the-playbook.yml',
+        inventory: '/etc/ansible/hosts')
     }
 }
 stage('Apply to Kube') {
