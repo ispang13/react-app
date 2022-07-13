@@ -77,7 +77,7 @@ stage('Apply to Kube with ansible') {
     steps {
         ansiblePlaybook(
         credentialsId: 'jenkins',
-        playbook: '/etc/ansible/playbooks/the-playbook.yml',
+        playbook: '/etc/ansible/playbooks/test-kube.yml',
         inventory: '/etc/ansible/hosts',
         extras: '-vvvvv'
         )
