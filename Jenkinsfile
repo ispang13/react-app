@@ -75,10 +75,13 @@ stage('Apply to Kube with ansible') {
         branch 'test-an'
     }
     steps {
+        
         ansiblePlaybook(
         credentialsId: 'jenkins',
         playbook: '/etc/ansible/playbooks/the-playbook.yml',
-        inventory: '/etc/ansible/hosts')
+        inventory: '/etc/ansible/hosts',
+        extras: '-vvvv'
+        )
         //sh "ansible-playbook /etc/ansible/playbooks/the-playbook.yml -f 10 --verbose"
     }
 }
